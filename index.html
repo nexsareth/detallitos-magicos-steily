@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detallitos Mágicos Steily</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <header>
+    <h1>Detallitos Mágicos Steily</h1>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+    <h2>Convertimos tus sentimientos en regalos inolvidables</h2>
+    <p>Detalles personalizados para cada ocasión especial</p>
+    <button id="btn-hero">Ver nuestros servicios</button>
+    </section>
+
+    <main>
+
+    <section id="servicios">
+        <h2>Nuestros Servicios</h2>
+        <div class="tarjetas">
+        <div class="tarjeta">
+            <h3>Regalos personalizados</h3>
+            <p>Creamos detalles únicos con tu mensaje, nombre o foto especial.</p>
+        </div>
+        <div class="tarjeta">
+            <h3>Fechas especiales</h3>
+            <p>Cumpleaños, aniversarios, San Valentín, Día de la Madre y más.</p>
+        </div>
+        </div>
+    </section>
+
+    <section id="productos">
+        <h2>Nuestros Productos</h2>
+
+        <div class="categorias">
+        <button class="cat-btn activo" onclick="filtrar('todo')">Todo</button>
+        <button class="cat-btn" onclick="filtrar('ramos')">Ramos</button>
+        <button class="cat-btn" onclick="filtrar('regalos')">Regalos</button>
+        <button class="cat-btn" onclick="filtrar('personalizados')">Personalizados</button>
+        </div>
+
+        <div class="productos-grid" id="productos-grid">
+
+        <div class="producto" data-categorias="ramos personalizados">
+            <img src="ramo1.jpeg" alt="Ramo especial">
+            <div class="producto-info">
+            <h3>Ramo especial</h3>
+            <button onclick="verDetalle('ramo1.jpeg','Ramo especial','Ramo hecho a mano con flores eternas personalizadas.','Ramo especial')">Ver detalles</button>
+            </div>
+        </div>
+
+        <div class="producto" data-categorias="regalos">
+            <img src="ramo2.jpeg" alt="Caja de regalo">
+            <div class="producto-info">
+            <h3>Caja de regalo</h3>
+            <button onclick="verDetalle('ramo2.jpeg','Caja de regalo','Caja decorada con detalles especiales y personalizados.','Caja de regalo')">Ver detalles</button>
+            </div>
+        </div>
+
+        <div class="producto" data-categorias="personalizados">
+            <img src="ramo3.jpeg" alt="Detalle personalizado">
+            <div class="producto-info">
+            <h3>Detalle personalizado</h3>
+            <button onclick="verDetalle('ramo3.jpeg','Detalle personalizado','Detalle único hecho con amor para una ocasión especial.','Detalle personalizado')">Ver detalles</button>
+            </div>
+        </div>
+
+        <div class="producto" data-categorias="ramos">
+            <img src="ramo6.jpeg" alt="Ramo eterno">
+            <div class="producto-info">
+            <h3>Ramo eterno</h3>
+            <button onclick="verDetalle('ramo6.jpeg','Ramo eterno','Ramo eterno hecho a mano con flores que duran para siempre.','Ramo eterno')">Ver detalles</button>
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+    <section id="nosotros">
+        <h2>¿Quiénes Somos?</h2>
+        <p>Somos una empresa dedicada a crear detalles y regalos personalizados para todo tipo de fechas especiales. Nuestro propósito es ayudar a expresar sentimientos y hacer de cada ocasión un momento inolvidable con regalos creativos y llenos de amor.</p>
+    </section>
+
+    <section id="contacto">
+        <h2>Contáctanos</h2>
+        <p>¿Tienes una idea especial en mente? ¡Escríbenos y la hacemos realidad!</p>
+        <button id="btn-whatsapp">Escribir por WhatsApp</button>
+    </section>
+
+    </main>
+
+    <footer>
+    <p>© 2026 Detallitos Mágicos Steily — Hecho con amor</p>
+    </footer>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal-fondo" onclick="cerrarModal(event)">
+    <div class="modal-caja">
+        <button class="modal-cerrar" onclick="cerrarModal()">✕</button>
+        <img id="modal-img" src="" alt="">
+        <div class="modal-info">
+        <h2 id="modal-nombre"></h2>
+        <p class="modal-precio" id="modal-precio"></p>
+        <p class="modal-desc" id="modal-desc"></p>
+        <button id="modal-btn-wa">Pedir por WhatsApp</button>
+        </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
