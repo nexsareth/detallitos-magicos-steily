@@ -1,0 +1,7 @@
+EtiquetaPara qué sirve
+<header>Encabezado del sitio (logo, menú)
+<nav>Menú de navegación<a href="...">Un enlace — el href dice a dónde va
+<main>El contenido principal de la página
+<section>Una sección o bloque temático
+<h2>Título secundario (más pequeño que h1)
+<footer>Pie de páginaid="..."Le da un nombre único a una sección para poder enlazarla
