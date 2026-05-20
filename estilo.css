@@ -19,6 +19,7 @@ header {
   align-items: center;
   position: sticky;
   top: 0;
+  z-index: 100;
 }
 
 header h1 {
@@ -233,6 +234,19 @@ footer {
   color: #6b3a5a;
 }
 
+/* SECCIONES OCULTAS POR DEFECTO */
+#nosotros,
+#contacto,
+#servicios {
+  display: none;
+}
+
+#nosotros.visible,
+#contacto.visible,
+#servicios.visible {
+  display: block;
+}
+
 /* MODAL */
 .modal-fondo {
   display: none;
@@ -258,13 +272,8 @@ footer {
   width: 90%;
   overflow: hidden;
   position: relative;
-}
-
-.modal-caja img {
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-  cursor: zoom-in;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .modal-info {
@@ -321,6 +330,92 @@ footer {
   color: #4a2d40;
 }
 
+/* GALERÍA DEL MODAL */
+.galeria {
+  position: relative;
+  width: 100%;
+  background-color: #f4ecec00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.galeria-contenido {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.galeria-contenido img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  cursor: zoom-in;
+  background-color: #ffffff00;
+}
+
+.galeria-contenido video {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  background-color: #ffffff00;
+}
+
+.galeria-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #6b3a5a;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-top: 0;
+}
+
+.galeria-btn:hover {
+  background-color: #FFD6E0;
+}
+
+.galeria-btn.izq {
+  left: 10px;
+}
+
+.galeria-btn.der {
+  right: 10px;
+}
+
+.galeria-puntos {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 0 0 0;
+  background-color: white;
+}
+
+.punto {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #FFD6E0;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+
+.punto.activo {
+  background-color: #c084a0;
+}
+
 /* VISOR DE IMAGEN COMPLETA */
 #visor-img {
   display: none;
@@ -329,7 +424,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.92);
+  background-color: rgba(255, 255, 255, 0);
   z-index: 2000;
   justify-content: center;
   align-items: center;
